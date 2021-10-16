@@ -5,7 +5,7 @@
 #define DEFAULT   0
 #define SYMB      1
 #define NAV       2
-#define F         3
+#define FUN       3
 #define GAME      4
 #define GAME_NUM  5
 
@@ -20,10 +20,10 @@
 // |  \   |  Z  |  X  |  C  |  V  |  B  |                                 |  N  |  M   |  ,  |  .  |  /  |  #   |
 //                          | NONE| SHFT| S SPC | TAB |   | F ENT | N BKSP| SHFT| NONE |
                         bindings = <
-   &none    &kp Q &kp W       &kp E      &kp R      &kp T                                                          &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
-   &kp ESC  &kp A &mt LCTRL S &mt LGUI D &mt LALT F &kp G                                                          &kp H    &mt RALT J  &mt RGUI K     &mt RCTRL L   &kp SEMI &kp SQT
-   &kp BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                          &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
-                                         &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt F ENT &lt NAV BKSP &kp RSFT &none
+   &none    &kp Q &kp W       &kp E      &kp R      &kp T                                                            &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
+   &kp ESC  &kp A &mt LCTRL S &mt LGUI D &mt LALT F &kp G                                                            &kp H    &mt RALT J  &mt RGUI K     &mt RCTRL L   &kp SEMI &kp SQT
+   &kp BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                            &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
+                                         &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENT &lt NAV BKSP &kp RSFT &none
                         >;
                 };
                 symb_layer {
@@ -53,7 +53,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &kp DEL &kp RSFT    &none
                 };
 
-                f_layer {
+                fun_layer {
 // --------------------------------------------------------------------------------------------------------
 // | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE |  F1  |  F2  |  F3  |  F10  | NONE |
 // | NONE | NONE | LCTRL| LGUI | LALT | NONE |                               | NONE |  F4  |  F5  |  F6  |  F11  | NONE |
