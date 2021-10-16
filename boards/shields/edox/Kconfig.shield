@@ -1,0 +1,5 @@
+config SHIELD_EDOX_LEFT
+    def_bool $(shields_list_contains,edox_left)
+
+config SHIELD_EDOX_RIGHT
+    def_bool $(shields_list_contains,edox_right)

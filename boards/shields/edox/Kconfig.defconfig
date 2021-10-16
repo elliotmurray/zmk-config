@@ -1,0 +1,16 @@
+if SHIELD_EDOX_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "edox"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_EDOX_LEFT || SHIELD_EDOX_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
