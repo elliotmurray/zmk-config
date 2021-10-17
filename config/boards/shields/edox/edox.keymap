@@ -26,7 +26,7 @@
                                          &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
                 };
                 symb_layer {
 // -----------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@
                                                      &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
                 };
 
                 nav_layer {
@@ -57,7 +57,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &kp DEL &kp RSFT    &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
                 };
                 fun_layer {
 // --------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &none  &kp RSFT  &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
                 };
                 game_layer {
 // --------------------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@
                                &none &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &mt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
 
                 };
 
@@ -104,7 +104,7 @@
                                     &none   &kp LSFT &kp SPACE &kp ENTER    &kp ENTER &kp BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
 
                 };
         };
