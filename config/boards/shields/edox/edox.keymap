@@ -25,6 +25,8 @@
    &kp BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                              &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
                                          &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
                 symb_layer {
 // -----------------------------------------------------------------------------------------
@@ -38,6 +40,8 @@
    &kp PIPE &kp LS(N7) &kp LS(N1)      &kp LS(N9)    &kp LS(N0)    &kp B                                   &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
                                                      &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
                         >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
 
                 nav_layer {
@@ -79,6 +83,8 @@
                                &none &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &mt NAV BKSP &kp RSFT &none
                         >;
 
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+
                 };
 
                 game_num_layer {
@@ -93,6 +99,8 @@
    &kp LCTRL &kp N3  &none  &kp N4  &kp N7  &kp N0                                             &none    &kp F7  &kp F8  &kp F9  &kp F12  &none
                                     &none   &kp LSFT &kp SPACE &kp ENTER    &kp ENTER &kp BKSP &kp RSFT &none
                         >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 
                 };
         };
