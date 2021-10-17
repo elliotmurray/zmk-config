@@ -56,6 +56,8 @@
    &none  &none  &none     &none    &none    &none                                        &kp HOME    &kp PG_DN    &kp PG_UP    &kp END   &none &none
                                     &none    &kp LSFT &kp DEL  &none       &none  &kp DEL &kp RSFT    &none
                         >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
                 fun_layer {
 // --------------------------------------------------------------------------------------------------------
@@ -69,6 +71,8 @@
    &none  &none  &none     &none    &none    &none                                       &none     &kp F7  &kp F8  &kp F9  &kp F12  &none
                                     &none    &kp LSFT &kp DEL  &none       &none  &none  &kp RSFT  &none
                         >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
                 game_layer {
 // --------------------------------------------------------------------------------------------------------
