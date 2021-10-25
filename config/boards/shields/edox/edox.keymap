@@ -10,6 +10,19 @@
 #define GAME_NUM  5
 
 / {
+
+        behaviors { 
+                hm: homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <150>;
+                        quick_tap_ms = <0>;
+                        flavor = "tap-preferred";
+                        bindings = <&kp>, <&kp>;
+                };
+        };
+        
         keymap {
                 compatible = "zmk,keymap";
 
@@ -21,7 +34,7 @@
 //                          | NONE| SHFT| S SPC | TAB |   | F ENT | N BKSP| SHFT| NONE |
                         bindings = <
    &none    &kp Q &kp W       &kp E      &kp R      &kp T                                                              &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
-   &kp ESC  &kp A &mt LCTRL S &mt LGUI D &mt LALT F &kp G                                                              &kp H    &mt RALT J  &mt RGUI K     &mt RCTRL L   &kp SEMI &kp SQT
+   &kp ESC  &kp A &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                              &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
    &kp BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                              &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
                                          &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
@@ -36,7 +49,7 @@
 //                          |NONE |SHFT |NONE |NONE |   |NONE |NONE |S 0  |NONE |
                         bindings = <
    &none    &kp LS(N3) &kp LS(N6)      &kp LS(LBKT)  &kp LS(RBKT)  &kp T                                   &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
-   &none    &kp LS(N2) &mt LCTRL GRAVE &mt LGUI LBKT &mt LALT RBKT &kp G                                   &kp UNDER    &mt RALT N4 &mt RGUI N5 &mt RCTRL N6 &kp EQUAL &kp SQT
+   &none    &kp LS(N2) &hm LCTRL GRAVE &hm LGUI LBKT &hm LALT RBKT &kp G                                   &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
    &kp PIPE &kp LS(N7) &kp LS(N1)      &kp LS(N9)    &kp LS(N0)    &kp B                                   &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
                                                      &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
                         >;
