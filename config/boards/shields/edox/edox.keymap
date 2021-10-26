@@ -51,10 +51,10 @@
 // | PIPE |  &  |  !  |  (  |  )  |  %  |                           |  *  |  7  |  8  |  9  |  .  | NONE|
 //                          |NONE |SHFT |NONE |NONE |   |NONE |NONE |S 0  |NONE |
                         bindings = <
-   &none               &kp LS(N3) &kp LS(N6)      &kp LS(LBKT)  &kp LS(RBKT)  &kp DLLR                                &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
-   &none               &kp LS(N2) &hm LCTRL TILDE &hm LGUI LBKT &hm LALT RBKT &kp STAR                                &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
-   &kp LS(NON_US_BSLH) &kp LS(N7) &kp LS(N1)      &kp LS(N9)    &kp LS(N0)    &kp PRCNT                               &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
-                                                                &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
+   &none      &kp LS(N3)      &kp LS(N6)            &kp LS(LBKT)  &kp LS(RBKT)  &kp DLLR                                &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
+   &none      &kp LS(N2)      &hm LCTRL NON_US_BSLH &hm LGUI LBKT &hm LALT RBKT &kp STAR                                &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
+   &kp TILDE  &kp LS(N7) &kp LS(N1)      &kp LS(N9)               &kp LS(N0)    &kp PRCNT                               &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
+                                                                  &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp F21 F22>;
