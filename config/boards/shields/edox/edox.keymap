@@ -33,13 +33,13 @@
 // |  \   |  Z  |  X  |  C  |  V  |  B  |                                 |  N  |  M   |  ,  |  .  |  /  |  #   |
 //                          | NONE| SHFT| S SPC | TAB |   | F ENT | N BKSP| SHFT| NONE |
                         bindings = <
-   &none    &kp Q &kp W       &kp E      &kp R      &kp T                                                              &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
-   &kp ESC  &kp A &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                              &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
-   &kp BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                              &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
-                                         &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
+   &none           &kp Q &kp W       &kp E      &kp R      &kp T                                                              &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
+   &kp ESC         &kp A &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                              &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
+   &kp NON_US_BSLH &kp Z &kp X       &kp C      &kp V      &kp B                                                              &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
+                                                &none      &kp LSFT   &lt SYMB SPACE &kp TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 symb_layer {
 // -----------------------------------------------------------------------------------------
@@ -48,13 +48,13 @@
 // | PIPE |  &  |  !  |  (  |  )  |  %  |                           |  *  |  7  |  8  |  9  |  .  | NONE|
 //                          |NONE |SHFT |NONE |NONE |   |NONE |NONE |S 0  |NONE |
                         bindings = <
-   &none    &kp LS(N3) &kp LS(N6)      &kp LS(LBKT)  &kp LS(RBKT)  &kp T                                   &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
-   &none    &kp LS(N2) &hm LCTRL GRAVE &hm LGUI LBKT &hm LALT RBKT &kp G                                   &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
-   &kp PIPE &kp LS(N7) &kp LS(N1)      &kp LS(N9)    &kp LS(N0)    &kp B                                   &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
-                                                     &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
+   &none               &kp LS(N3) &kp LS(N6)      &kp LS(LBKT)  &kp LS(RBKT)  &kp DLLR                                &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
+   &none               &kp LS(N2) &hm LCTRL TILDE &hm LGUI LBKT &hm LALT RBKT &kp STAR                                &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
+   &kp LS(NON_US_BSLH) &kp LS(N7) &kp LS(N1)      &kp LS(N9)    &kp LS(N0)    &kp PRCNT                               &kp STAR     &kp N7      &kp N8      &kp N9       &kp FSLH  &kp NON_US_HASH
+                                                                &none         &kp LSFT &none &none        &none &none &mt RSHFT N0 &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
 
                 nav_layer {
@@ -70,7 +70,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &kp DEL &kp RSFT    &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 fun_layer {
 // --------------------------------------------------------------------------------------------------------
@@ -85,7 +85,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &none  &kp RSFT  &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 game_layer {
 // --------------------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@
                                &none &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &mt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
 
                 };
 
@@ -117,7 +117,7 @@
                                     &none   &kp LSFT &kp SPACE &kp ENTER    &kp ENTER &kp BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F1) LC(F2)>;
+                        sensor-bindings = <&inc_dec_kp F21 F22>;
 
                 };
         };
