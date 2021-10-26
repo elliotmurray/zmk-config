@@ -27,6 +27,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        label = "Base";
 // --------------------------------------------------------------------------------------------------------
 // | NONE |  Q  |  W  |  E  |  R  |  T  |                                 |  Y  |  U   |  I  |  O  |  P  | GAME |
 // | ESC  |  A  |C S  |G D  |A F  |  G  |                                 |  H  |A J   |G K  |C L  |  ;  |  '   |
@@ -42,6 +43,7 @@
                         sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 symb_layer {
+                        label = "Symbol";
 // -----------------------------------------------------------------------------------------
 // | NONE |  £  |  ^  |  {  |  }  |  $  |                           |  -  |  1  |  2  |  3  |  +  | NONE|
 // | NONE |  "  |C `  |G [  |A ]  |  *  |                           |  _  |A 4  |G 5  |C 6  |  =  | NONE|
@@ -58,6 +60,7 @@
                 };
 
                 nav_layer {
+                        label = "Navigation";
 // --------------------------------------------------------------------------------------------------------
 // | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE | BACK | FRWD | NONE | NONE | NONE |
 // | NONE | NONE | LCTRL| LGUI | LALT | NONE |                               | LEFT | DOWN |  UP  | RGHT | NONE | NONE |
@@ -73,6 +76,7 @@
                         sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 fun_layer {
+                        label = "Function";
 // --------------------------------------------------------------------------------------------------------
 // | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE |  F1  |  F2  |  F3  |  F10  | NONE |
 // | NONE | NONE | LCTRL| LGUI | LALT | NONE |                               | NONE |  F4  |  F5  |  F6  |  F11  | NONE |
@@ -88,6 +92,7 @@
                         sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
                 game_layer {
+                        label = "Game";
 // --------------------------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U   |  I  |  O  |  P  | DEFAULT |
 // | ESC  |  A  |  S  |  D  |  F  |  G  |                             |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -105,6 +110,7 @@
                 };
 
                 game_num_layer {
+                        label = "Game Number";
 // --------------------------------------------------------------------------------------------------------
 // | TAB  |  1   |  W   |  2   |  5   |  8   |                               | NONE |  F1  |  F2  |  F3  |  F10  | NONE |
 // | ESC  |  A   |  S   |  D   |  6   |  9   |                               | NONE |  F4  |  F5  |  F6  |  F11  | NONE |
