@@ -37,7 +37,7 @@
                         bindings = <
    &none     &kp Q &kp W       &kp E      &kp R      &kp T                                                                 &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
    &kp ESC   &kp A &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                                 &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
-   &kp BSLH  &kp Z &kp X       &kp C      &kp V      &kp B                                                                 &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
+   &kp GRAVE &kp Z &kp X       &kp C      &kp V      &kp B                                                                 &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
                                           &none      &kp LSFT   &lt SYMB SPACE &lt BT TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
 
