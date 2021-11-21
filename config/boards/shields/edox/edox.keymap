@@ -81,7 +81,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &kp DEL &kp RSFT    &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LC(F9) LC(F10)>;
+                        sensor-bindings = <&inc_dec_kp LG(Z) LG(LS(Z))>;
                 };
                 fun_layer {
                         label = "Function";
@@ -97,7 +97,7 @@
                                     &none    &kp LSFT &kp DEL  &none       &none  &none  &kp RSFT  &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LG(Z) LG(LS(Z))>;
+                        sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
                 };
                 bt_layer {
                         label = "BT";
