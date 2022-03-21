@@ -3,13 +3,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define DEFAULT   0
-#define GAME      1
+#define BASE      0
+#define NAV       1
 #define SYMB      2
-#define NAV       3
-#define FUN       4
-#define BT        5
-#define GAME_NUM  6
+#define NUM       3
+#define FUNC      4
+// #define GAME      1
+// #define GAME_NUM  6
 
 &lt {
         tapping-term-ms = <150>;
@@ -30,138 +30,81 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
-                td: tapdance {
+                mlt: homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "TAPDANCE";
+                        label = "MOD_LAYER_TOGGLE";
                         #binding-cells = <2>;
-                        tapping-term-ms = <190>;
+                        tapping-term-ms = <150>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
-                        bindings = <&kp>, <&kp>;
+                        bindings = <&to>, <&kp>;
                 };
         };
-        
+ 
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                base_layer {
                         label = "Base";
-// --------------------------------------------------------------------------------------------------------
-// | COPY |  Q  |  W  |  E  |  R  |  T  |                                   |  Y  |  U   |  I  |  O  |  P  | GAME |
-// | ESC  |  A  |C S  |G D  |A F  |  G  |                                   |  H  |A J   |G K  |C L  |  ;  |  '   |
-// |  \   |  Z  |  X  |  C  |  V  |  B  |                                   |  N  |  M   |  ,  |  .  |  /  |  #   |
-//                          | PLAY| SHFT| S SPC | B TAB |   | F ENT | N BKSP| SHFT| NONE |
                         bindings = <
-   &ext_power EP_TOG &kp Q &kp W       &kp E      &kp R      &kp T                                                                 &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
-   &kp ESC   &kp A  &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                                 &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
-   &kp GRAVE &kp Z  &kp X       &kp C      &kp V      &kp B                                                                 &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
-                                           &kp C_PP   &kp LSFT   &lt SYMB SPACE &lt BT TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
+   &none   &kp Q  &kp W       &kp E      &kp R      &kp T                                                       &kp Y          &kp U       &kp I          &kp O         &kp P    &none
+   &none   &kp A  &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                       &kp H          &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &none
+   &none   &kp Z  &kp X       &kp C      &kp V      &kp B                                                       &kp N          &kp M       &kp COMMA      &kp DOT       &kp FSLH &none
+                                         &kp C_PP   &mlt BASE LSHFT &kp SPACE  &to NAV       &to SYMB &kp BKSP  &mlt BASE RSFT &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-                };
-
-                game_layer {
-                        label = "Game";
-// --------------------------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U   |  I  |  O  |  P  | DEFAULT |
-// | ESC  |  A  |  S  |  D  |  F  |  G  |                             |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | LCTL |  Z  |  X  |  C  |  V  |  B  |                             |  N  |  M   |  ,  |  .  |  /  |  #   |
-//                          | NONE| SHFT| SPC |GN ENT|   | ENT |N BKSP| SHFT| NONE |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T                                                           &kp Y    &kp U  &kp I     &kp O   &kp P    &to DEFAULT
-   &kp ESC   &kp A &kp S &kp D &kp F &kp G                                                           &kp H    &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B                                                           &kp N    &kp M  &kp COMMA &kp DOT &kp FSLH &kp NON_US_HASH
-                               &none &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &lt NAV BKSP &kp RSFT &none
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
-
-                };
-
-                symb_layer {
-                        label = "Symbol";
-// -----------------------------------------------------------------------------------------
-// | NONE |  £  |  ^  |  {  |  }  |  $  |                           |  -  |  1  |  2  |  3  |  +  | NONE|
-// | NONE |  "  |C `  |G [  |A ]  |  *  |                           |  _  |A 4  |G 5  |C 6  |  =  | NONE|
-// | PIPE |  &  |  !  |  (  |  )  |  %  |                           |  *  |  7  |  8  |  9  |  .  | NONE|
-//                          |NONE |SHFT |NONE |NONE |   |ENTR |BKSP |S 0  |NONE |
-                        bindings = <
-   &none      &kp LS(N3)      &kp LS(N6)            &kp LS(LBKT)  &kp LS(RBKT)  &kp DLLR                                       &kp MINUS    &kp N1      &kp N2      &kp N3       &kp PLUS  &none
-   &none      &kp LS(N2)      &hm LCTRL NON_US_BSLH &hm LGUI LBKT &hm LALT RBKT &kp STAR                                       &kp UNDER    &hm RALT N4 &hm RGUI N5 &hm RCTRL N6 &kp EQUAL &kp SQT
-   &kp TILDE  &kp LS(N7)      &kp LS(N1)            &kp LS(N9)    &kp LS(N0)    &kp PRCNT                                      &kp STAR     &kp N7      &kp N8      &kp N9       &kp DOT   &kp NON_US_HASH
-                                                                  &none         &kp LSFT &none &none        &kp ENTER &kp BKSP &mt RSHFT N0 &none
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp F21 F22>;
                 };
 
                 nav_layer {
-                        label = "Nav";
-// --------------------------------------------------------------------------------------------------------
-// | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE | BACK | FRWD | NONE | NONE | NONE |
-// | NONE | NONE | LCTRL| LGUI | LALT | NONE |                               | LEFT | DOWN |  UP  | RGHT | DEL  | NONE |
-// | NONE | NONE | NONE | NONE | NONE | NONE |                               | HOME | PGDN | PGUP | END  | NONE | NONE |
-//                             | NONE | LSFT | SPCE  | TAB |   | NONE | NONE | RSFT | NONE |
+                        label = "Navigation";
                         bindings = <
-   &none  &none  &none     &none    &none    &none                                          &none       &kp LG(LBKT) &kp LG(RBKT) &none     &none   &none
-   &none  &none  &kp LCTRL &kp LGUI &kp LALT &none                                          &kp LEFT    &kp DOWN     &kp UP       &kp RIGHT &kp DEL &none
-   &none  &none  &none     &none    &none    &none                                          &kp HOME    &kp PG_DN    &kp PG_UP    &kp END   &none   &none
-                                    &none    &kp LSFT &kp SPACE  &kp TAB       &none  &none &kp RSFT    &none
+   &none      &none      &none      &kp LG(LBKT) &kp LG(RBKT  &kp ESC                             /**/                         &none            &none      &none      &none      &none      &none
+   &none      &to NUM    &kp LEFT   &kp UP       &kp DOWN     &kp RIGHT                           /**/                         &none            &kp RALT   &kp RGUI   &kp RCTRL  &none      &none
+   &none      &none      &none      &kp GUI      &kp ENTR     &kp TAB                             /**/                         &none            &none      &none      &none      &none      &none
+                                                 &kp C_PP     &mlt BASE LSHFT &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT   &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp LG(Z) LG(LS(Z))>;
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
                 };
-                fun_layer {
+
+                symbol_layer {
+                        label = "Symbol";
+                        bindings = <
+   &none      &kp MINUS      &kp EXCL      &kp AMPS       &kp PIPE      &kp PLUS                            /**/                         &kp LS(3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
+   &none      &kp DOT        &mt LCTRL SQT &mt LGUI COLON &mt LALT SEMI &kp EQUAL                           /**/                         &kp NON_US_HASH    &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
+   &none      &kp UNDER      &kp DQT       &kp TILDE      &kp AT        &kp STAR                            /**/                         &kp PRCNT          &kp LPAR      &kp RPAR       &kp RPAR              &kp GRAVE     &none
+                                                          &kp C_PP      &mlt BASE LSHFT &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
+                        >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                };
+
+                number_layer {
+                        label = "Number";
+                        bindings = <
+   &none      &kp MINUS      &kp N1        &kp N2      &kp N3      &kp PLUS                       /**/                         &kp LS(3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
+   &none      &kp DOT        &mt LCTRL N4  &mt LGUI N5 &mt LALT N6 &kp EQUAL                      /**/                         &kp NON_US_HASH    &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
+   &none      &kp UNDER      &kp N7        &kp N8      &kp N9      &kp STAR                       /**/                         &kp PRCNT          &kp LPAR      &kp RPAR       &kp RPAR              &kp GRAVE     &none
+                                                       &kp C_PP    &kp N0    &kp SPACE  &to NAV   /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
+                        >;
+
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                };
+
+                function_layer {
                         label = "Function";
-// --------------------------------------------------------------------------------------------------------
-// | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE |  F1  |  F2  |  F3  |  F10  | NONE |
-// | NONE | NONE | LCTRL| LGUI | LALT | NONE |                               | NONE |  F4  |  F5  |  F6  |  F11  | NONE |
-// | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE |  F7  |  F8  |  F9  |  F12  | NONE |
-//                             | NONE | LSFT | SPCE | TAB  |   | NONE | NONE | RSFT | NONE |
                         bindings = <
-   &none  &none  &none     &none    &none    &none                                           &none     &kp F1  &kp F2  &kp F3  &kp F10  &none
-   &none  &none  &kp LCTRL &kp LGUI &kp LALT &none                                           &none     &kp F4  &kp F5  &kp F6  &kp F11  &none
-   &none  &none  &none     &none    &none    &none                                           &none     &kp F7  &kp F8  &kp F9  &kp F12  &none
-                                    &none    &kp LSFT &kp SPACE  &kp TAB       &none  &none  &kp RSFT  &none
+   &none      &none      &kp F1       &kp F2      &kp F3      &kp F10                       /**/                         &none              &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none           &none 
+   &none      &none      &kp F4       &kp F5      &kp F6      &kp F11                       /**/                         &none              &kp RALT        &kp RGUI        &kp RCTR        &none           &none
+   &none      &none      &kp F7       &kp F8      &kp F9      &kp F12                       /**/                         &none              &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_CLR      &none           &none
+                                                  &kp C_PP    &kp N0    &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
-                };
-                bt_layer {
-                        label = "BT";
-// --------------------------------------------------------------------------------------------------------
-// | NONE | NONE | NONE | NONE | NONE | BCLR |                               | NONE | NONE | NONE | NONE | NONE | NONE |
-// | NONE |  B1  |  B2  |  B3  |  B4  |  B5  |                               | NONE | NONE | NONE | NONE | NONE | NONE |
-// | NONE | NONE | NONE | NONE | NONE | NONE |                               | NONE | NONE | NONE | NONE | NONE | NONE |
-//                             | NONE | NONE | NONE | NONE |   | ENTR | BKSP | NONE | NONE |
-                        bindings = <
-   &none  &none         &none         &none         &none         &bt BT_CLR                                     &none  &none  &none  &none  &none  &none
-   &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                   &none  &none  &none  &none  &none  &none
-   &none  &none         &none         &none         &none         &none                                          &none  &none  &none  &none  &none  &none
-                                                    &none         &none         &none  &none          &kp ENTER  &kp BKSP  &none  &none
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp F21 F22>;
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
                 };
 
-                game_num_layer {
-                        label = "Game Number";
-// --------------------------------------------------------------------------------------------------------
-// | TAB  |  1   |  W   |  2   |  5   |  8   |                                | NONE |  F1  |  F2  |  F3  |  F10  | NONE |
-// | ESC  |  A   |  S   |  D   |  6   |  9   |                                | NONE |  F4  |  F5  |  F6  |  F11  | NONE |
-// | LCTRL|  3   | NONE |  4   |  7   |  0   |                                | NONE |  F7  |  F8  |  F9  |  F12  | NONE |
-//                             | PLAY | SHFT| SPC | ENT |         | ENT | BKSP| SHFT | NONE |
-                        bindings = <
-   &kp TAB   &kp N1  &kp W  &kp N2  &kp N5    &kp N8                                             &none    &kp F1  &kp F2  &kp F3  &kp F10  &none
-   &kp ESC   &kp A   &kp S  &kp D   &kp N6    &kp N9                                             &none    &kp F4  &kp F5  &kp F6  &kp F11  &none
-   &kp LCTRL &kp N3  &none  &kp N4  &kp N7    &kp N0                                             &none    &kp F7  &kp F8  &kp F9  &kp F12  &none
-                                    &kp C_PP  &kp LSFT &kp SPACE &kp ENTER    &kp ENTER &kp BKSP &kp RSFT &none
-                        >;
-
-                        sensor-bindings = <&inc_dec_kp F21 F22>;
-
-                };
+                
         };
 };
 
