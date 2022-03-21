@@ -37,7 +37,7 @@
                         tapping-term-ms = <150>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
-                        bindings = <&to>, <&kp>;
+                        bindings = <&kp>, <&to>;
                 };
         };
  
@@ -50,7 +50,7 @@
    &none   &kp Q  &kp W       &kp E      &kp R      &kp T                                                       &kp Y          &kp U       &kp I          &kp O         &kp P    &none
    &none   &kp A  &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                       &kp H          &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &none
    &none   &kp Z  &kp X       &kp C      &kp V      &kp B                                                       &kp N          &kp M       &kp COMMA      &kp DOT       &kp FSLH &none
-                                         &kp C_PP   &mlt BASE LSHFT &kp SPACE  &to NAV       &to SYMB &kp BKSP  &mlt BASE RSFT &none
+                                         &kp C_PP   &mlt LSHFT BASE &kp SPACE  &to NAV       &to SYMB &kp BKSP  &mlt RSFT BASE &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -62,7 +62,7 @@
    &none      &none      &none      &kp LG(LBKT) &kp LG(RBKT) &kp ESC                             /**/                         &none            &none      &none      &none      &none      &none
    &none      &to NUM    &kp LEFT   &kp UP       &kp DOWN     &kp RIGHT                           /**/                         &none            &kp RALT   &kp RGUI   &kp RCTRL  &none      &none
    &none      &none      &none      &kp LGUI     &kp RET      &kp TAB                             /**/                         &none            &none      &none      &none      &none      &none
-                                                 &kp C_PP     &mlt BASE LSHFT &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT   &none
+                                                 &kp C_PP     &mlt LSHFT BASE &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE   &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -74,7 +74,7 @@
    &none      &kp MINUS      &kp EXCL      &kp AMPS       &kp PIPE      &kp PLUS                            /**/                         &kp LS(3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
    &none      &kp DOT        &mt LCTRL SQT &mt LGUI COLON &mt LALT SEMI &kp EQUAL                           /**/                         &kp NON_US_HASH    &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
    &none      &kp UNDER      &kp DQT       &kp TILDE      &kp AT        &kp STAR                            /**/                         &kp PRCNT          &kp LPAR      &kp RPAR       &kp RPAR              &kp GRAVE     &none
-                                                          &kp C_PP      &mlt BASE LSHFT &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
+                                                          &kp C_PP      &mlt LSHFT BASE &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE     &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -86,7 +86,7 @@
    &none      &kp MINUS      &kp N1        &kp N2      &kp N3      &kp PLUS                       /**/                         &kp LS(3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
    &none      &kp DOT        &mt LCTRL N4  &mt LGUI N5 &mt LALT N6 &kp EQUAL                      /**/                         &kp NON_US_HASH    &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
    &none      &kp UNDER      &kp N7        &kp N8      &kp N9      &kp STAR                       /**/                         &kp PRCNT          &kp LPAR      &kp RPAR       &kp RPAR              &kp GRAVE     &none
-                                                       &kp C_PP    &kp N0    &kp SPACE  &to NAV   /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
+                                                       &kp C_PP    &kp N0    &kp SPACE  &to NAV   /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE     &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -98,7 +98,7 @@
    &none      &none      &kp F1       &kp F2      &kp F3      &kp F10                       /**/                         &none              &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none           &none 
    &none      &none      &kp F4       &kp F5      &kp F6      &kp F11                       /**/                         &none              &kp RALT        &kp RGUI        &kp RCTRL       &none           &none
    &none      &none      &kp F7       &kp F8      &kp F9      &kp F12                       /**/                         &none              &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_CLR      &none           &none
-                                                  &kp C_PP    &kp N0    &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt BASE RSFT     &none
+                                                  &kp C_PP    &kp N0    &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE     &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
