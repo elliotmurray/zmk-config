@@ -30,7 +30,7 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
-                mlt: homerow_mods {
+                mlt: mod_layer_toggle {
                         compatible = "zmk,behavior-hold-tap";
                         label = "MOD_LAYER_TOGGLE";
                         #binding-cells = <2>;
@@ -47,10 +47,10 @@
                 base_layer {
                         label = "Base";
                         bindings = <
-   &none   &kp Q  &kp W       &kp E      &kp R      &kp T                                                       &kp Y          &kp U       &kp I          &kp O         &kp P    &none
-   &none   &kp A  &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                       &kp H          &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &none
-   &none   &kp Z  &kp X       &kp C      &kp V      &kp B                                                       &kp N          &kp M       &kp COMMA      &kp DOT       &kp FSLH &none
-                                         &kp C_PP   &mlt LSHFT BASE &kp SPACE  &to NAV       &to SYMB &kp BKSP  &mlt RSFT BASE &none
+   &none   &kp Q  &kp W       &kp E      &kp R      &kp T                                                         &kp Y          &kp U       &kp I          &kp O         &kp P    &none
+   &none   &kp A  &hm LCTRL S &hm LGUI D &hm LALT F &kp G                                                         &kp H          &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &none
+   &none   &kp Z  &kp X       &kp C      &kp V      &kp B                                                         &kp N          &kp M       &kp COMMA      &kp DOT       &kp FSLH &none
+                                         &kp C_PP   &kp LSHFT &kp SPACE  &to NAV              &to SYMB  &kp BKSP  &kp RSFT       &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
