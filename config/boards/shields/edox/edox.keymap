@@ -71,10 +71,10 @@
                 symbol_layer {
                         label = "Symbol";
                         bindings = <
-   &none      &kp MINUS      &kp EXCL      &kp AMPS       &kp TILDE     &kp PLUS                            /**/                         &kp LS(N3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
-   &none      &kp DOT        &mt LCTRL SQT &mt LGUI COLON &mt LALT SEMI &kp EQUAL                           /**/                         &kp NON_US_HASH     &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
-   &none      &kp UNDER      &kp LS(N2)    &kp PIPE       &kp DQT       &kp STAR                            /**/                         &kp PRCNT           &kp LPAR      &kp RPAR       &kp GRAVE             &kp FSLH      &none
-                                                          &kp C_PP      &mlt LSHFT BASE &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE      &none
+   &none      &kp MINUS      &kp EXCL         &kp AMPS       &kp TILDE     &kp PLUS                            /**/                         &kp LS(N3)          &kp LBRC      &kp RBRC       &kp CARET             &kp DLLR      &none 
+   &none      &kp DOT        &mt LCTRL LS(N2) &mt LGUI COLON &mt LALT SEMI &kp EQUAL                           /**/                         &kp NON_US_HASH     &mt RALT LBKT &mt RGUI RBKT  &mt RCTRL NON_US_BSLH &to FUNC      &none
+   &none      &kp UNDER      &kp SQT          &kp PIPE       &kp DQT       &kp STAR                            /**/                         &kp PRCNT           &kp LPAR      &kp RPAR       &kp GRAVE             &kp FSLH      &none
+                                                             &kp C_PP      &mlt LSHFT BASE &kp SPACE  &to NAV  /**/   &to SYMB    &kp BKSP  &mlt RSFT BASE      &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
