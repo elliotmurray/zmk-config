@@ -39,7 +39,18 @@
                         bindings = <&kp>, <&kp>;
                 };
         };
-        
+
+        combos
+        {
+                compatible = "zmk,combos";
+                combo_ent
+                {
+                        timeout-ms = <50>;
+                        key-positions = <28 29>;
+                        bindings = <&kp ENTER>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
