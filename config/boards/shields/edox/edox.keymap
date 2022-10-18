@@ -55,6 +55,18 @@
                         key-positions = <25 26>;
                         bindings = <&kp BKSP>;
                 };
+                combo_game
+                {
+                        timeout-ms = <50>;
+                        key-positions = <10 11>;
+                        bindings = <&to GAME>;
+                };
+                combo_default
+                {
+                        timeout-ms = <50>;
+                        key-positions = <0 1>;
+                        bindings = <&to DEFAULT>;
+                };
         };
 
         keymap {
@@ -63,12 +75,12 @@
                 default_layer {
                         label = "Base";
 //   --------------------------------------------------------------------------------------------------------
-// 0  | COPY |  Q  |  W  |  E  |  R  |  T  | 5                              6  |  Y  |  U   |  I  |  O  |  P  | GAME | 11
+// 0  | NONE |  Q  |  W  |  E  |  R  |  T  | 5                              6  |  Y  |  U   |  I  |  O  |  P  | NONE | 11
 // 12 | ESC  |  A  |C S  |G D  |A F  |  G  | 17                             18 |  H  |A J   |G K  |C L  |  ;  |  '   | 23
 // 24 |  \   |  Z  |  X  |  C  |  V  |  B  | 29                             30 |  N  |  M   |  ,  |  .  |  /  |  #   | 35
 //                          36 | PLAY| SHFT| S SPC | B TAB |   | F ENT | N BKSP| SHFT| NONE | 43
                         bindings = <
-   &ext_power EP_ON &kp Q &kp W   &kp E      &kp R      &kp T                                                                               &kp Y    &kp U       &kp I          &kp O         &kp P    &to GAME
+   &none     &kp Q &kp W   &kp E      &kp R      &kp T                                                                                      &kp Y    &kp U       &kp I          &kp O         &kp P    &none
    &kp ESC   &kp A  &hm LCTRL S   &hm LGUI D &hm LALT F &kp G                                                                               &kp H    &hm RALT J  &hm RGUI K     &hm RCTRL L   &kp SEMI &kp SQT
    &kp GRAVE &kp Z  &kp X         &kp C      &kp V      &kp B                                                                               &kp N    &kp M       &kp COMMA      &kp DOT       &kp FSLH &kp NON_US_HASH
                                              &kp C_PP   &kp LSFT   &lt SYMB SPACE &hm LS(LC(LG(LALT))) TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
@@ -80,12 +92,12 @@
                 game_layer {
                         label = "Game";
 // --------------------------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U   |  I  |  O  |  P  | DEFAULT |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U   |  I  |  O  |  P  | NONE |
 // | ESC  |  A  |  S  |  D  |  F  |  G  |                             |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | LCTL |  Z  |  X  |  C  |  V  |  B  |                             |  N  |  M   |  ,  |  .  |  /  |  #   |
 //                          | PLAY| SHFT| SPC |GN ENT|   | ENT |N BKSP| SHFT| NONE |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R    &kp T                                                           &kp Y    &kp U  &kp I     &kp O   &kp P    &to DEFAULT
+   &kp TAB   &kp Q &kp W &kp E &kp R    &kp T                                                           &kp Y    &kp U  &kp I     &kp O   &kp P    &none
    &kp ESC   &kp A &kp S &kp D &kp F    &kp G                                                           &kp H    &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V    &kp B                                                           &kp N    &kp M  &kp COMMA &kp DOT &kp FSLH &kp NON_US_HASH
                                &kp C_PP &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &lt NAV BKSP &kp RSFT &none
