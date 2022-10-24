@@ -45,25 +45,28 @@
                 compatible = "zmk,combos";
                 combo_ent
                 {
-                        timeout-ms = <50>;
+                        timeout-ms = <40>;
                         key-positions = <27 28>;
                         bindings = <&kp ENTER>;
+                        layers = <0>
                 };
                 combo_bksp
                 {
-                        timeout-ms = <50>;
+                        timeout-ms = <40>;
                         key-positions = <25 26>;
                         bindings = <&kp BKSP>;
+                        layers = <0>
                 };
                 combo_game
                 {
-                        timeout-ms = <50>;
+                        timeout-ms = <40>;
                         key-positions = <10 11>;
                         bindings = <&to GAME>;
+                        layers = <0>
                 };
                 combo_default
                 {
-                        timeout-ms = <50>;
+                        timeout-ms = <40>;
                         key-positions = <0 1>;
                         bindings = <&to DEFAULT>;
                 };
