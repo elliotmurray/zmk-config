@@ -89,7 +89,7 @@
                                              &kp C_PP   &kp LSFT   &lt SYMB SPACE &hm LS(LC(LG(LALT))) TAB       &lt FUN ENTER &lt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
                 };
 
                 game_layer {
@@ -106,7 +106,7 @@
                                &kp C_PP &kp LSFT &kp SPACE &lt GAME_NUM ENTER    &kp ENTER &lt NAV BKSP &kp RSFT &none
                         >;
 
-                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+                        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
 
                 };
 
