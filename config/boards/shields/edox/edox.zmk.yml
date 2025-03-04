@@ -1,0 +1,14 @@
+file_format: "1"
+id: edox
+name: edox
+type: shield
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - studio
+siblings:
+  - edox_left
+  - edox_right
