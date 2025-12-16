@@ -42,7 +42,7 @@
                 mh: meh_hyper {
                         compatible = "zmk,behavior-hold-tap";
                         label = "MEH_HYPER";
-                        #binding-cells = <1>;
+                        #binding-cells = <2>;
                         tapping-term-ms = <200>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
@@ -227,10 +227,10 @@
 // | NONE | M Z | M X | M C | M V | M B |                               | M N | M M | M , | M . | M / | M #  |
 //                          | NONE | NONE | NONE | NONE |   | NONE | NONE | NONE | NONE |
                         bindings = <
-   &none  &mh Q     &mh W     &mh E       &mh R       &mh T                                         &mh Y     &mh U     &mh I       &mh O       &mh P       &none
-   &none  &mh A     &mh S     &mh D       &mh F       &mh G                                         &mh H     &mh J     &mh K       &mh L       &mh SEMI    &mh SQT
-   &none  &mh Z     &mh X     &mh C       &mh V       &mh B                                         &mh N     &mh M     &mh COMMA   &mh DOT     &mh FSLH    &mh NON_US_HASH
-                                          &none       &none   &none  &none       &none  &none       &none     &none
+   &none  &mh Q Q        &mh W W        &mh E E            &mh R R            &mh T T                                                  &mh Y Y        &mh U U        &mh I I            &mh O O            &mh P P            &none
+   &none  &mh A A        &mh S S        &mh D D            &mh F F            &mh G G                                                  &mh H H        &mh J J        &mh K K            &mh L L            &mh SEMI SEMI      &mh SQT SQT
+   &none  &mh Z Z        &mh X X        &mh C C            &mh V V            &mh B B                                                  &mh N N        &mh M M        &mh COMMA COMMA    &mh DOT DOT        &mh FSLH FSLH      &mh NON_US_HASH NON_US_HASH
+                                                           &none              &none      &none  &none       &none  &none              &none          &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
