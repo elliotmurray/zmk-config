@@ -42,11 +42,34 @@
                 mh: meh_hyper {
                         compatible = "zmk,behavior-hold-tap";
                         label = "MEH_HYPER";
-                        #binding-cells = <2>;
+                        #binding-cells = <1>;
                         tapping-term-ms = <200>;
                         quick_tap_ms = <0>;
                         flavor = "tap-preferred";
-                        bindings = <&kp>, <&kp>;
+                        bindings = <&macro_hyper>, <&macro_meh>;
+                };
+        };
+
+        macros {
+                macro_meh: macro_meh {
+                        compatible = "zmk,behavior-macro-one-param";
+                        #binding-cells = <1>;
+                        bindings
+                                = <&macro_press &kp LCTRL &kp LSHIFT &kp LALT>
+                                , <&macro_param_1to1>
+                                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                                , <&macro_release &kp LCTRL &kp LSHIFT &kp LALT>
+                                ;
+                };
+                macro_hyper: macro_hyper {
+                        compatible = "zmk,behavior-macro-one-param";
+                        #binding-cells = <1>;
+                        bindings
+                                = <&macro_press &kp LCTRL &kp LSHIFT &kp LALT &kp LGUI>
+                                , <&macro_param_1to1>
+                                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                                , <&macro_release &kp LCTRL &kp LSHIFT &kp LALT &kp LGUI>
+                                ;
                 };
         };
 
@@ -204,10 +227,10 @@
 // | NONE | M Z | M X | M C | M V | M B |                               | M N | M M | M , | M . | M / | M #  |
 //                          | NONE | NONE | NONE | NONE |   | NONE | NONE | NONE | NONE |
                         bindings = <
-   &none  &mh LS(LC(LG(LALT(Q)))) LS(LC(LALT(Q)))  &mh LS(LC(LG(LALT(W)))) LS(LC(LALT(W)))  &mh LS(LC(LG(LALT(E)))) LS(LC(LALT(E)))  &mh LS(LC(LG(LALT(R)))) LS(LC(LALT(R)))  &mh LS(LC(LG(LALT(T)))) LS(LC(LALT(T)))                                                                                                                                                                                                                      &mh LS(LC(LG(LALT(Y)))) LS(LC(LALT(Y)))  &mh LS(LC(LG(LALT(U)))) LS(LC(LALT(U)))  &mh LS(LC(LG(LALT(I)))) LS(LC(LALT(I)))  &mh LS(LC(LG(LALT(O)))) LS(LC(LALT(O)))  &mh LS(LC(LG(LALT(P)))) LS(LC(LALT(P)))  &none
-   &none  &mh LS(LC(LG(LALT(A)))) LS(LC(LALT(A)))  &mh LS(LC(LG(LALT(S)))) LS(LC(LALT(S)))  &mh LS(LC(LG(LALT(D)))) LS(LC(LALT(D)))  &mh LS(LC(LG(LALT(F)))) LS(LC(LALT(F)))  &mh LS(LC(LG(LALT(G)))) LS(LC(LALT(G)))                                                                                                                                                                                                                      &mh LS(LC(LG(LALT(H)))) LS(LC(LALT(H)))  &mh LS(LC(LG(LALT(J)))) LS(LC(LALT(J)))  &mh LS(LC(LG(LALT(K)))) LS(LC(LALT(K)))  &mh LS(LC(LG(LALT(L)))) LS(LC(LALT(L)))  &mh LS(LC(LG(LALT(SEMI)))) LS(LC(LALT(SEMI)))  &mh LS(LC(LG(LALT(SQT)))) LS(LC(LALT(SQT)))
-   &none  &mh LS(LC(LG(LALT(Z)))) LS(LC(LALT(Z)))  &mh LS(LC(LG(LALT(X)))) LS(LC(LALT(X)))  &mh LS(LC(LG(LALT(C)))) LS(LC(LALT(C)))  &mh LS(LC(LG(LALT(V)))) LS(LC(LALT(V)))  &mh LS(LC(LG(LALT(B)))) LS(LC(LALT(B)))                                                                                                                                                                                                                      &mh LS(LC(LG(LALT(N)))) LS(LC(LALT(N)))  &mh LS(LC(LG(LALT(M)))) LS(LC(LALT(M)))  &mh LS(LC(LG(LALT(COMMA)))) LS(LC(LALT(COMMA)))  &mh LS(LC(LG(LALT(DOT)))) LS(LC(LALT(DOT)))  &mh LS(LC(LG(LALT(FSLH)))) LS(LC(LALT(FSLH)))  &mh LS(LC(LG(LALT(NON_US_HASH)))) LS(LC(LALT(NON_US_HASH)))
-                                                                                                                                                             &none  &none  &none  &none       &none  &none  &none  &none
+   &none  &mh Q     &mh W     &mh E       &mh R       &mh T                                         &mh Y     &mh U     &mh I       &mh O       &mh P       &none
+   &none  &mh A     &mh S     &mh D       &mh F       &mh G                                         &mh H     &mh J     &mh K       &mh L       &mh SEMI    &mh SQT
+   &none  &mh Z     &mh X     &mh C       &mh V       &mh B                                         &mh N     &mh M     &mh COMMA   &mh DOT     &mh FSLH    &mh NON_US_HASH
+                                          &none       &none   &none  &none       &none  &none       &none     &none
                         >;
 
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
